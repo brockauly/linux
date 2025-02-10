@@ -546,22 +546,19 @@
 &usb {
 	status = "okay";
 
-	phys = <&usb_hs1_phy>;
-	phy-select = <&tcsr 0xb000 0>;
-	extcon = <&smbb>, <&usb_id>;
-	vbus-supply = <&chg_otg>;
+	phys = <&usb_hs2_phy>;
+	phy-select = <&tcsr 0xb000 1>;
 
 	hnp-disable;
 	srp-disable;
 	adp-disable;
 };
 
-&usb_hs1_phy {
+&usb_hs2_phy {
 	status = "okay";
 
 	v1p8-supply = <&pm8941_l6>;
 	v3p3-supply = <&pm8941_l24>;
 
-	extcon = <&smbb>;
 	qcom,init-seq = /bits/ 8 <0x1 0x64>;
 };
