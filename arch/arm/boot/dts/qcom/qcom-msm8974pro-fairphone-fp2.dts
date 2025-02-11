@@ -565,3 +565,7 @@
 	extcon = <&smbb>;
 	qcom,init-seq = /bits/ 8 <0x1 0x64>;
 };
+
+&usb3 {
+	status = "okay";
+};
