@@ -752,30 +752,32 @@
 		};
 
 		usb3: usb@f9200000 {
-			compatible = "qcom,msm8994-dwc3", "qcom,dwc3";
+			compatible = "qcom,dwc3";
 			reg = <0xf9200000 0x400>;
 			#address-cells = <1>;
 			#size-cells = <1>;
 			ranges;
 
-			interrupts = <GIC_SPI 133 IRQ_TYPE_LEVEL_HIGH>;
-			interrupt-names =  "hs_phy_irq";
+			interrupts = <GIC_SPI 180 IRQ_TYPE_LEVEL_HIGH>,
+				     <GIC_SPI 311 IRQ_TYPE_LEVEL_HIGH>,
+				     <GIC_SPI 133 IRQ_TYPE_LEVEL_HIGH>,
+				     <GIC_SPI 310 IRQ_TYPE_LEVEL_HIGH>;
+			interrupt-names = "pwr_event",
+					  "qusb2_phy",
+					  "hs_phy_irq",
+					  "ss_phy_irq";
 
 			clocks = <&gcc GCC_USB_HS_AHB_CLK>,
 				     <&gcc GCC_USB_HS_SYSTEM_CLK>;
 			clock-names = "iface", "core";
 
-			assigned-clocks = <&gcc GCC_USB_HS_SYSTEM_CLK>;
-			assigned-clock-rates = <75000000>;
+			status = "disabled";
 
-			qcom,select-utmi-as-pipe-clk;
-
-			usb@f9200000 {
+			dwc3@f9200000 {
 				compatible = "snps,dwc3";
 				reg = <0xf9200000 0xcc00>;
 				interrupts = <GIC_SPI 131 IRQ_TYPE_LEVEL_HIGH>;
-				maximum-speed = "high-speed";
-				dr_mode = "host";
+
 			};
 		};
 
