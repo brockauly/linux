@@ -548,6 +548,8 @@
 
 	phys = <&usb_hs2_phy>;
 	phy-select = <&tcsr 0xb000 1>;
+	extcon = <&smbb>, <0>;
+	vbus-supply = <&chg_otg>;
 
 	hnp-disable;
 	srp-disable;
@@ -559,6 +561,7 @@
 
 	v1p8-supply = <&pm8941_l6>;
 	v3p3-supply = <&pm8941_l24>;
+	extcon = <&smbb>;
 
 	qcom,init-seq = /bits/ 8 <0x1 0x64>;
 };
