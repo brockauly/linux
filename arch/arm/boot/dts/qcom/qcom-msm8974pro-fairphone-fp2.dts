@@ -544,7 +544,7 @@
 };
 
 &usb {
-	status = "disabled";
+	status = "okay";
 
 	phys = <&usb_hs1_phy>;
 	phy-select = <&tcsr 0xb000 0>;
@@ -557,7 +557,7 @@
 };
 
 &usb_hs1_phy {
-	status = "disabled";
+	status = "okay";
 
 	v1p8-supply = <&pm8941_l6>;
 	v3p3-supply = <&pm8941_l24>;
@@ -569,3 +569,7 @@
 &usb3 {
 	status = "okay";
 };
+
+&usb_hs2_phy {
+	status = "okay";
+}
