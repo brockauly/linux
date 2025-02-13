@@ -572,4 +572,4 @@
 
 &usb_hs2_phy {
 	status = "okay";
-}
+};
