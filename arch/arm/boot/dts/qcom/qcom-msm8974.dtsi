@@ -775,9 +775,9 @@
 
 			status = "disabled";
 
-			dwc3@f9200000 {
+			dwc3@f9a55200 {
 				compatible = "snps,dwc3";
-				reg = <0xf9200000 0xfc00>;
+				reg = <0xf9a55200 0x200>;
 				interrupts = <GIC_SPI 131 IRQ_TYPE_LEVEL_HIGH>, <GIC_SPI 179 IRQ_TYPE_LEVEL_HIGH>;
 				interrup-names = "wakeup", "otg";
 				phys = <&usb_hs2_phy>;
